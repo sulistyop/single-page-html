@@ -976,7 +976,7 @@ section {
     /* background: #fff; */
 }
 
-@media (max-width: 900px) {
+@media (max-width: 500px) {
     .counts .count-box {
         padding-top: 25%;
         width: 100%;
