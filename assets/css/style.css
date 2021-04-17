@@ -1704,10 +1704,10 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-    background: #ff7ec9;
-        /* #207a59 */
+    background-color:rgb(247, 233, 232);
     padding: 0 0 30px 0;
-    color: #fff;
+    font-family:"Sofia", sans-serif;
+    color: #000;
     font-size: 14px;
 }
 
@@ -1872,4 +1872,20 @@ section {
     /* letter-spacing: 30px; */
     font-size:32px;
     letter-spacing: 0.5em;
+}
+
+.map-responsive{
+    align-content: center;
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
 }
