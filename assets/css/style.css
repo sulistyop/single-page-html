@@ -9,7 +9,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-    font-family:"font-family: Arial, Helvetica, sans-serif;";
+    font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 0.1rem;
     color: #444444;
 }
@@ -29,7 +29,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family:"font-family: Arial, Helvetica, sans-serif;";
+    font-family: Arial, Helvetica, sans-serif;
    
 }
 
@@ -196,7 +196,7 @@ h6 {
     transition: 0.3s;
     font-size: 15px;
     font-weight: 500;
-    font-family:"font-family: Arial, Helvetica, sans-serif;";
+    font-family: Arial, Helvetica, sans-serif;
    
 }
 
@@ -270,8 +270,8 @@ h6 {
 
 .nav-menu .drop-down>a:after {
     content: "\ea99";
-    font-family:"font-family: Arial, Helvetica, sans-serif;";
-     IcoFont;
+    font-family: Arial, Helvetica, sans-serif;
+
     padding-left: 5px;
 }
 
@@ -292,8 +292,8 @@ h6 {
 
 .nav-menu .drop-down .drop-down>a:after {
     content: "\eaa0";
-    font-family:"font-family: Arial, Helvetica, sans-serif;";
-     IcoFont;
+    font-family: Arial, Helvetica, sans-serif;
+  
     position: absolute;
     right: 15px;
 }
@@ -329,7 +329,7 @@ h6 {
 }
 
 .mobile-nav-toggle i {
-    color: #fff;
+    color: #000;
 }
 
 .mobile-nav {
@@ -340,12 +340,13 @@ h6 {
     left: 15px;
     z-index: 9999;
     overflow-y: auto;
-    background: #fff;
+    background-color:rgb(247, 233, 232);
     transition: ease-in-out 0.2s;
     opacity: 0;
     visibility: hidden;
     border-radius: 10px;
     padding: 10px 0;
+    height: 100%;
 }
 
 .mobile-nav * {
@@ -356,10 +357,14 @@ h6 {
 
 .mobile-nav a {
     display: block;
+    text-align: center;
     position: relative;
+    font-style: italic;
+    text-decoration: underline;
     color: #01036f;
     padding: 10px 20px;
     font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
     outline: none;
 }
 
@@ -372,8 +377,7 @@ h6 {
 
 .mobile-nav .drop-down>a:after {
     content: "\ea99";
-    font-family:"font-family: Arial, Helvetica, sans-serif;";
-     IcoFont;
+    font-family: Arial, Helvetica, sans-serif;
     padding-left: 10px;
     position: absolute;
     right: 15px;
@@ -403,7 +407,7 @@ h6 {
     top: 0;
     left: 0;
     position: fixed;
-    background: rgba(27, 138, 32, 0.6);
+    background: rgba(240, 245, 241, 0.6);
     overflow: hidden;
     display: none;
     transition: ease-in-out 0.2s;
@@ -462,7 +466,7 @@ h6 {
 }
 
 #hero .btn-get-started {
-    font-family:"font-family: Arial, Helvetica, sans-serif;";
+    font-family: Arial, Helvetica, sans-serif;
   
     font-weight: 500;
     font-size: 16px;
@@ -661,7 +665,7 @@ section {
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #aaaaaa;
-    font-family:"font-family: Arial, Helvetica, sans-serif;";
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 
@@ -680,7 +684,7 @@ section {
     font-size: 36px;
     font-weight: 700;
     text-transform: uppercase;
-    font-family:"font-family: Arial, Helvetica, sans-serif;";
+    font-family: Arial, Helvetica, sans-serif;
     color: #010483;
 }
 
@@ -972,10 +976,22 @@ section {
     /* background: #fff; */
 }
 
+@media (max-width: 575px) {
+    .counts .count-box {
+        padding-top: 25%;
+        width: 100%;
+        height: 50%;
+        position: relative;
+        text-align: center;
+        /* background: #fff; */
+    }
+}
+
+
 .counts .count-box span {
     display: block;
     text-align: center;
-    font-family:"font-family: Arial, Helvetica, sans-serif;";
+    font-family: Arial, Helvetica, sans-serif;
     /* letter-spacing: 30px; */
     font-size:42px;
     letter-spacing: 0.5em;
@@ -1057,7 +1073,6 @@ section {
 
 .ann .foto{
     border-radius: 50%;
-  
     border: 5px solid whitesmoke;
 }
 
@@ -1280,7 +1295,7 @@ section {
     font-size: 36px;
     color: #ff7ec9; /*#1acc8d;*/
     font-weight: 600;
-    font-family:"font-family: Arial, Helvetica, sans-serif;";
+    font-family: Arial, Helvetica, sans-serif;
 
     margin-bottom: 20px;
 }
@@ -1337,7 +1352,7 @@ section {
     transition: none;
     font-size: 14px;
     font-weight: 400;
-    font-family:"font-family: Arial, Helvetica, sans-serif;";
+    font-family: Arial, Helvetica, sans-serif;
 
     font-weight: 600;
     transition: 0.3s;
@@ -1391,7 +1406,7 @@ section {
 .faq .faq-list a {
     display: block;
     position: relative;
-    font-family:"font-family: Arial, Helvetica, sans-serif;";
+    font-family: Arial, Helvetica, sans-serif;
 
     font-size: 16px;
     line-height: 24px;
@@ -1639,7 +1654,7 @@ section {
     font-size: 14px;
     line-height: 24px;
     margin-bottom: 0;
-    font-family:"font-family: Arial, Helvetica, sans-serif;";
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 
@@ -1773,7 +1788,7 @@ section {
 
 .center{
     text-align: center;
-    font-family:"font-family: Arial, Helvetica, sans-serif;";
+    font-family: Arial, Helvetica, sans-serif;
     /* letter-spacing: 30px; */
     font-size:32px;
     letter-spacing: 0.5em;
