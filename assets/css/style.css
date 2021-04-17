@@ -314,15 +314,21 @@ h6 {
 
 /* Mobile Navigation */
 .show-title{
-    display: contents;
-    text-align: center;
-}
-.show-title p{
-    font-family:"Sofia", sans-serif;
-    font-size: 25px;
+    display: none;
     text-align: center;
 }
 
+@media (max-width: 900px) {
+    .show-title{
+        display: contents;
+        text-align: center;
+    }
+    .show-title p{
+        font-family:"Sofia", sans-serif;
+        font-size: 25px;
+        text-align: center;
+    }
+}
 .mobile-nav-toggle {
     position: fixed;
     right: 15px;
@@ -1095,6 +1101,30 @@ section {
 }
 
 .ann .foto{
+    border-radius: 50%;
+    border: 5px solid whitesmoke;
+}
+/*--------------------------------------------------------------
+# covid
+--------------------------------------------------------------*/
+.covid{
+    background-color:#fff;
+}
+.covid .covid-item {
+    overflow: hidden;
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+}
+
+.covid .covid-item img {
+    transition: all ease-in-out 0.4s;
+}
+
+.covid .covid-item:hover img {
+    transform: scale(1.1);
+}
+
+.covid .foto{
     border-radius: 50%;
     border: 5px solid whitesmoke;
 }
