@@ -986,7 +986,7 @@ section {
 .counts .count-box {
     padding-top: 25%;
     width: 100%;
-    height: 880px;
+    height: auto;
     position: relative;
     text-align: center;
     /* background: #fff; */
@@ -1863,7 +1863,6 @@ section {
 #myVideo {
     z-index: -1;
     position: fixed;
- 
 }
 
 .center{
@@ -1892,4 +1891,19 @@ section {
 
 hr{
     border-top: 1px solid #ff7ec9;
+}
+
+.addBton{
+    background-color: rgb(247, 233, 232);
+    font-family:"Sofia", sans-serif;
+    border: none;
+    border-radius: 12px;
+}
+
+.cust-color{
+    background-color: rgb(247, 233, 232);
+}
+
+.cust-font{
+    font-family:"Sofia", sans-serif;
 }

@@ -35,8 +35,8 @@
 </head>
 
 <body>
-  <video autoplay muted loop id="myVideo" class="embed-responsive-item">
-    <source id="videoBG" src="clip/file.mp4" type="video/mp4" >
+  <video autoplay muted loop id="myVideo" >
+    <source  height="auto" width="100%" id="videoBG" src="clip/file.mp4" type="video/mp4" >
     Your browser does not support HTML5 video.
   </video>
   <!-- ======= Header ======= -->
@@ -212,6 +212,20 @@
         </div>
     </div>
   </section>
+  <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+    <defs>
+      <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+    </defs>
+    <g class="wave1">
+      <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+    </g>
+    <g class="wave2">
+      <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+    </g>
+    <g class="wave3">
+      <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+    </g>
+  </svg>
   <!-- End  Section -->
 
   <!-- =======  Section DOA ======= -->
@@ -246,22 +260,58 @@
             
             </div>
             
-            <div class="dot-container">
+            <div class="dot-container" hidden>
               <span class="dot" onclick="currentSlide(1)"></span> 
               <span class="dot" onclick="currentSlide(2)"></span> 
               <span class="dot" onclick="currentSlide(3)"></span> 
             </div>
-            
+            <div class="center">
+              <button class="addBton" type="button"
+              data-toggle="modal" data-target="#exampleModal">
+                Tulis Doa Dan Ucapan
+              </button>
+            </div>
         </div>
     </div>
+
   </section>
   <!-- End Section -->
 
-  <video width="100%" height="auto" autoplay muted loop>
-    <source src="clip/file2.mp4" type="video/mp4">
-  </video>
+
+  <!-- Modal -->
+  <div class="modal fade pt-5" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog " role="document">
+      <form>
+      <div class="modal-content">
+        <div class="modal-header   cust-color">
+          <h5 class="modal-title cust-font" id="exampleModalLabel">Masukan Pesan Anda</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Nama</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+            </div>
+            <div class="form-group">
+              <label for="text">Message</label>
+              <textarea type="text" class="form-control" id="text" placeholder="Text"></textarea>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="addBton">Save changes</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+
   <!-- ======= Footer ======= -->
   <footer id="footer">
+    <video width="100%" height="auto" autoplay muted loop>
+      <source src="clip/file2.mp4" type="video/mp4">
+    </video>
     <div class="container">
       <div class="copyright">
         <p>Kami do'akan kamu segera nyusul ya :)</p>
@@ -314,6 +364,23 @@
       slides[slideIndex-1].style.display = "block";  
       dots[slideIndex-1].className += " active-dot";
     }
+
+    var slideIndex = 0;
+    carousel();
+    
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"; 
+      }
+      slideIndex++;
+      if (slideIndex > x.length) {slideIndex = 1} 
+      x[slideIndex-1].style.display = "block"; 
+      setTimeout(carousel, 3000); 
+    }
+
+    
     </script>
 </body>
 
