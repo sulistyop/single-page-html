@@ -30,26 +30,28 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/caorusel.css" rel="stylesheet">
 
 </head>
 
 <body>
-  <video autoplay muted loop id="myVideo">
-    <source id="videoBG" src="file.mp4" type="video/mp4" >
+  <video autoplay muted loop id="myVideo" class="embed-responsive-item">
+    <source id="videoBG" src="clip/file.mp4" type="video/mp4" >
     Your browser does not support HTML5 video.
   </video>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center header-transparent">
     <div class="container d-flex align-items-center">
       <nav class="nav-menu d-none d-lg-block">
-        <span class="show-title"><p>Menu Bar</p></span>
+        <span class="show-title">
+          <p>Menu Bar</p>
+        </span>
         <ul>
-          <li class="active"><a href="/">Beranda</a></li>
-          <li><a href="#about">Profil</a></li>
-          <li><a href="#jadwal">Jadwal</a></li>
-          <li><a href="#gallery">Galeri</a></li>
-          <li><a href="#team">Organisasi</a></li>
-          <li><a href="#contact">Kontak</a></li>
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="#ann">Pengumuman</a></li>
+          <li><a href="#covid">Acara</a></li>
+          <li><a href="#letter">Letter of Allah</a></li>
+          <li><a href="#doa">Doa & Ucapan</a></li>
         </ul>
       </nav><!-- .nav-menu -->
     </div>
@@ -71,7 +73,7 @@
   <!-- =======  Section Pengumuman ======= -->
   <section id="ann" class="ann">
     <div class="container">
-        <div class="text-center" data-aos="fade-up">
+        <div class="text-center p-5 m-5" data-aos="fade-up">
           <h2>Assalamu'alaikum Warahmatullah Wabarakatuh</h2>
           <p>Dengan memohon rahmat dan ridho Allah SWT, dan tanpa mengurasi rasa hormat kami bermaksud mengumumkan pernikahan putra putri kami
           </p>
@@ -94,10 +96,8 @@
                 </div>
               </div>
               <div class="col-md">
-                  <div class="center" data-aos="fade-left">
+                  <div class="text-center" data-aos="fade-left">
                     <img class="img-fluid foto" src="https://static.wixstatic.com/media/ecbbbdab6a45f682a6db909f62a9ed54.jpg/v1/fill/w_288,h_288,al_c,q_80,usm_0.66_1.00_0.01/Hipster%20Bride.webp" alt="" srcset="">
-                  </div>
-                  <div class="text-center">
                     <h3>Fulan</h3>
                     <p>Putra dari Bapak Fulan dan Ibu Fulanah.</p>
                   </div>
@@ -111,70 +111,155 @@
             </svg>
           </div>
         </div>
-      
     </div>
-  </section>
-  <!-- End  Section -->
+    </section>
+      <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+        <defs>
+          <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+        </defs>
+        <g class="wave1">
+          <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+        </g>
+        <g class="wave2">
+          <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+        </g>
+        <g class="wave3">
+          <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+        </g>
+      </svg>
+    <!-- End  Section -->
 
-
-   <!-- =======  Section Covid Alert ======= -->
-   <section id="covid" class="covid">
-    <div class="container">
-        <div class="text-center" data-aos="fade-up">
-          <h2>ALERT COVID</h2>
-          <p></p>
-        </div>
-        <div class="container text-center">
-          <p>Mohon Maaf atas ketidaknyamanan nya. Hanya mengundang Keluarga</p>
-        </div>
-        <div class="container">
-          <div class="">
-            <div class="col-md text-center">
-              <img src="assets/img/tree.webp" alt="" style="z-index: -1;" srcset="">
-              <h4 class="behind-image" >AKAD NIKAH</h4>
-            </div>
-            <div class="col text-center">
-              <div class="align-content-center">
-                <div class="container">
-                  <div class="row">
-                    <div class="col">
-                      <div class="p-5">
-                        <h4>Waktu</h4>
-                        <p>Jumat,30 April 1999</p>
+    <!-- =======  Section Covid Alert ======= -->
+    <section id="covid" class="covid">
+      <div class="container">
+          <div class="text-center" data-aos="fade-up">
+            <h2>ALERT COVID</h2>
+            <p></p>
+          </div>
+          <div class="container text-center">
+            <p>Mohon Maaf atas ketidaknyamanan nya. Hanya mengundang Keluarga</p>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md text-center" data-aos="fade-left">
+                <h4 class="behind-image" >AKAD NIKAH </h4>
+                <img src="assets/img/tree.webp" alt="" style="z-index: -1;" srcset="">
+              </div>
+              <div class="col-md text-center">
+                <div class="row" data-aos="fade-up">
+                  <div class="col">
+                    <div class="p-5">
+                      <h4>Waktu</h4>
+                      <p>Jumat,30 April 1999</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row" data-aos="fade-up">
+                  <div class="col">
+                    <div class="p-5">
+                      <h4>Lokasi</h4>
+                      <p>Jalan Pegangsaan Timur No 15</p>
+                    </div>
+                    <div data-aos="fade-left" data-aos-delay="200">
+                      <div class="map-responsive">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d247.42503136935832!2d110.4308668!3d-7.149052!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMDgnNTcuMSJTIDExMMKwMjUnNTEuNiJF!5e0!3m2!1sid!2sid!4v1607409735343!5m2!1sid!2sid" width="650" height="500" frameborder="5" style="border:5px;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                       </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col">
-                      <div class="p-5">
-                        <h4>Lokasi</h4>
-                        <p>Jalan Pegangsaan Timur No 15</p>
-                      </div>
-                      <div data-aos="fade-left" data-aos-delay="200">
-                        <div class="map-responsive">
-                          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d247.42503136935832!2d110.4308668!3d-7.149052!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMDgnNTcuMSJTIDExMMKwMjUnNTEuNiJF!5e0!3m2!1sid!2sid!4v1607409735343!5m2!1sid!2sid" width="650" height="500" frameborder="5" style="border:5px;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                        </div>
-                      </div>
-                    </div>
-                  </div> 
-                </div>
+                </div> 
               </div>
+              
+            </div>
+          </div>
+      </div>
+    </section>
+    <!-- End  Section -->
+
+    <!-- =======  Section Letter Of Allah ======= -->
+    <section id="letter" class="ann">
+    <div class="container">
+        <div class="text-center" data-aos="fade-up">
+          <span style="letter-spacing: 1.35rem;text-align:center;font-size:27px">LETTER OF ALLAH</span>
+        </div>
+        <div class="container pt-5">
+          <div class="pl-2 pr-2">
+            <div class="row">
+                <div class="col" data-aos="fade-left">
+                  <dd dir="rtl" class="text-md-right" style="letter-spacing:0em;font-size: 25px;">وَمِنۡ ءَايَٰتِهِۦٓ أَنۡ خَلَقَ لَكُم مِّنۡ أَنفُسِكُمۡ أَزۡوَٰجٗا لِّتَسۡكُنُوٓاْ إِلَيۡهَا وَجَعَلَ بَيۡنَكُم مَّوَدَّةٗ وَرَحۡمَةًۚ إِنَّ فِي ذَٰلِكَ لَأٓيَٰتٖ لِّقَوۡمٖ يَتَفَكَّرُونَ</dd>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" data-aos="fade-right">
+                  <span class="mt-5" style="letter-spacing:0em">Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir. (Ar-Rum : 21)</span>
+                </div>
             </div>
           </div>
         </div>
-      
+        <hr>
+        <div class="container pt-5">
+          <div class="pl-2 pr-2">
+            <div class="row">
+                <div class="col" data-aos="fade-left">
+                  <dd dir="rtl" class="text-md-right" style="letter-spacing:0em;font-size: 25px;">وَٱلَّذِينَ يَقُولُونَ رَبَّنَا هَبۡ لَنَا مِنۡ أَزۡوَٰجِنَا وَذُرِّيَّٰتِنَا قُرَّةَ أَعۡيُنٖ وَٱجۡعَلۡنَا لِلۡمُتَّقِينَ إِمَامًا
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"  data-aos="fade-right">
+                  <span class="mt-5" style="letter-spacing:0em">Dan orang orang yang berkata: "Ya Tuhan kami, anugrahkanlah kepada kami isteri-isteri kami dan keturunan kami sebagai penyenang hati (kami), dan jadikanlah kami imam bagi orang-orang yang bertakwa. (Al-Furqan : 74)</span>
+                </div>
+            </div>
+          </div>
+        </div>
     </div>
   </section>
   <!-- End  Section -->
 
+  <!-- =======  Section DOA ======= -->
+  <section id="doa" class="covid">
+    <div class="container">
+        <div class="text-center" data-aos="fade-up">
+          <span style="letter-spacing: 1.35rem;text-align:center;font-size:27px">DOA DAN UCAPAN</span>
+        </div>
+        <div class="container pt-5">
+          <div class="slideshow-container">
 
- 
+            <div class="mySlides"data-aos="fade-up">
+              <q >I love you the more in that I believe you had liked me for my own sake and for nothing else</q>
+              <p class="author">- John Keats</p>
+              <q class="text-sm-center">10 January 2021</q>
+            </div>
+            
+            <div class="mySlides">
+              <q>But man is not made for defeat. A man can be destroyed but not defeated.</q>
+              <p class="author">- Ernest Hemingway</p>
+              <q class="text-sm-center">10 January 2021</q>
+            </div>
+            
+            <div class="mySlides">
+              <q>I have not failed. I've just found 10,000 ways that won't work.</q>
+              <p class="author">- Thomas A. Edison</p>
+              <q class="text-sm-center">10 January 2021</q>
+            </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            
+            </div>
+            
+            <div class="dot-container">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
+            
+        </div>
+    </div>
+  </section>
+  <!-- End Section -->
 
-  <main id="main">
-
-  </main>
-  <!-- End #main -->
-
+  <video width="100%" height="auto" autoplay muted loop>
+    <source src="clip/file2.mp4" type="video/mp4">
+  </video>
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
@@ -202,7 +287,34 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  
+  <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active-dot", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active-dot";
+    }
+    </script>
 </body>
 
 </html>

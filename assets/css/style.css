@@ -259,7 +259,6 @@ h6 {
     font-size: 14px;
     font-weight: 500;
     text-transform: none;
-    color: #01036f;
 }
 
 .nav-menu .drop-down ul a:hover,
@@ -1127,7 +1126,7 @@ section {
 .behind-image{
     display: block;
     position: absolute;
-    top: 50%;
+    top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -1844,6 +1843,8 @@ section {
         /* #207a59 */
         /* #010479 */
     text-align: center;
+    font-size: 17px;
+    letter-spacing: 0.5rem;
     padding-top: 30px;
 }
 
@@ -1862,8 +1863,7 @@ section {
 #myVideo {
     z-index: -1;
     position: fixed;
-   
-   
+ 
 }
 
 .center{
@@ -1888,4 +1888,8 @@ section {
     height:100%;
     width:100%;
     position:absolute;
+}
+
+hr{
+    border-top: 1px solid #ff7ec9;
 }
