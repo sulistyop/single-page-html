@@ -3,7 +3,7 @@
 include_once("config.php");
  
 // Fetch all users data from database
-$result = mysqli_query($mysqli, "SELECT * FROM post ORDER BY id DESC");
+$result = mysqli_query($mysqli, "SELECT * FROM post WHERE tampilkan != 0 ORDER BY id DESC ");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +12,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM post ORDER BY id DESC");
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>My Wedding</title>
+  <title>Fahry Fara Alumunium</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -77,7 +77,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM post ORDER BY id DESC");
     <div class="container">
       <div class="count-box " data-aos="fade-up">
         <div style="z-index: 1000;background-color: black;color: white;border-radius: 25px;">
-          <h1>Fahry Fara Aluminium</h1>
+          <h1>Fahry Fara Alumunium</h1>
           <p>Kami Mengutamakan Kualitas ! </p>
         </div>
       </div>
@@ -111,158 +111,13 @@ $result = mysqli_query($mysqli, "SELECT * FROM post ORDER BY id DESC");
                     </ul>
                   </div>
                   <div class="part-2">
-                    <h3 class="product-title">Here Product Title</h3>
-                    <h4 class="product-old-price">$79.99</h4>
-                    <h4 class="product-price">$49.99</h4>
+                    <h3 class="product-title"><?php echo $data['nama'] ?></h3>
+                    <h4 class="product-old-price">Rp.<?php echo $data['harga_palsu'] ?></h4>
+                    <h4 class="product-price">Rp.<?php echo $data['harga'] ?></h4>
                   </div>
                 </div>
               </div>
             <?php } ?>
-              <!-- Single Product -->
-              <div class="col-md-6 col-lg-4 col-xl-3">
-                <div id="product-1" class="single-product">
-                  <div class="part-1">
-                    <ul>
-                      <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                      <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                      <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                      <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                    </ul>
-                  </div>
-                  <div class="part-2">
-                    <h3 class="product-title">Here Product Title</h3>
-                    <h4 class="product-old-price">$79.99</h4>
-                    <h4 class="product-price">$49.99</h4>
-                  </div>
-                </div>
-              </div>
-              <!-- Single Product -->
-              <div class="col-md-6 col-lg-4 col-xl-3">
-                <div id="product-2" class="single-product">
-                  <div class="part-1">
-                    <span class="discount">15% off</span>
-                    <ul>
-                      <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                      <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                      <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                      <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                    </ul>
-                  </div>
-                  <div class="part-2">
-                    <h3 class="product-title">Here Product Title</h3>
-                    <h4 class="product-price">$49.99</h4>
-                  </div>
-                </div>
-              </div>
-              <!-- Single Product -->
-              <div class="col-md-6 col-lg-4 col-xl-3">
-                <div id="product-3" class="single-product">
-                  <div class="part-1">
-                    <ul>
-                      <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                      <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                      <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                      <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                    </ul>
-                  </div>
-                  <div class="part-2">
-                    <h3 class="product-title">Here Product Title</h3>
-                    <h4 class="product-old-price">$79.99</h4>
-                    <h4 class="product-price">$49.99</h4>
-                  </div>
-                </div>
-              </div>
-              <!-- Single Product -->
-              <div class="col-md-6 col-lg-4 col-xl-3">
-                <div id="product-4" class="single-product">
-                  <div class="part-1">
-                    <span class="new">new</span>
-                    <ul>
-                      <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                      <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                      <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                      <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                    </ul>
-                  </div>
-                  <div class="part-2">
-                    <h3 class="product-title">Here Product Title</h3>
-                    <h4 class="product-price">$49.99</h4>
-                  </div>
-                </div>
-              </div>
-              <!-- Single Product -->
-              <div class="col-md-6 col-lg-4 col-xl-3">
-                <div id="product-1" class="single-product">
-                  <div class="part-1">
-                    <ul>
-                      <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                      <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                      <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                      <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                    </ul>
-                  </div>
-                  <div class="part-2">
-                    <h3 class="product-title">Here Product Title</h3>
-                    <h4 class="product-old-price">$79.99</h4>
-                    <h4 class="product-price">$49.99</h4>
-                  </div>
-                </div>
-              </div>
-              <!-- Single Product -->
-              <div class="col-md-6 col-lg-4 col-xl-3">
-                <div id="product-2" class="single-product">
-                  <div class="part-1">
-                    <span class="discount">15% off</span>
-                    <ul>
-                      <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                      <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                      <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                      <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                    </ul>
-                  </div>
-                  <div class="part-2">
-                    <h3 class="product-title">Here Product Title</h3>
-                    <h4 class="product-price">$49.99</h4>
-                  </div>
-                </div>
-              </div>
-              <!-- Single Product -->
-              <div class="col-md-6 col-lg-4 col-xl-3">
-                <div id="product-3" class="single-product">
-                  <div class="part-1">
-                    <ul>
-                      <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                      <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                      <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                      <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                    </ul>
-                  </div>
-                  <div class="part-2">
-                    <h3 class="product-title">Here Product Title</h3>
-                    <h4 class="product-old-price">$79.99</h4>
-                    <h4 class="product-price">$49.99</h4>
-                  </div>
-                </div>
-              </div>
-              <!-- Single Product -->
-              <div class="col-md-6 col-lg-4 col-xl-3">
-                <div id="product-4" class="single-product">
-                  <div class="part-1">
-                    <span class="new">new</span>
-                    <ul>
-                      <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                      <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                      <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                      <li><a href="#"><i class="fas fa-expand"></i></a></li>
-                    </ul>
-                  </div>
-                  <div class="part-2">
-                    <h3 class="product-title">Here Product Title</h3>
-                    <h4 class="product-price">$49.99</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
       </div>
