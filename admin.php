@@ -5,10 +5,10 @@
 
     $data = mysqli_query($mysqli, "SELECT * FROM post ORDER BY id DESC");
 ?>
-    <div class="m-1">
+    <div class="m-2 shadow">
         <div class="card">
             <div class="m-2">
-            <a class="btn btn-primary" href="/tambah-product">Tambah Product</a>
+            <a class="btn btn-primary" href="add.php">Tambah Product</a>
                 <div class="table-responsive">
                     <table class="table table-striped mt-2">
                         <thead>
@@ -25,8 +25,11 @@
                                 <th scope="row"><?php echo $key+1 ?></th>
                                 <td><?php echo $value['nama'] ?></td>
                                 <td>
-                                    <a href="/edit-product/<?php echo $value['id'] ?>">
+                                    <a class="btn btn-success" href="edit.php?id=<?php echo $value['id'] ?>">
                                         <i class="fas fa-pen-to-square"></i>
+                                    </a>
+                                    <a class="btn btn-danger" href='delete.php?id=<?php echo $value['id'] ?>'>
+                                        <i class="fas fa-trash"></i>
                                     </a>
                                 </td>
                             </tr>

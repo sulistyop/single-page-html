@@ -5,10 +5,8 @@
 
     if(isset($_POST['update']))
     {	
-        $request = $_SERVER['REQUEST_URI'];
-        $path = parse_url($request, PHP_URL_PATH);
-        $pathFragments = explode('/', $path);
-        $id = end($pathFragments);
+      
+       $id = $_POST['id'];
        $nama = $_POST['nama'];
        $harga = $_POST['harga'];
        $harga_palsu = $_POST['harga_palsu'];
@@ -33,13 +31,8 @@
 ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 <?php
-// Display selected user data based on id
-// Getting id from url
-$request = $_SERVER['REQUEST_URI'];
-$path = parse_url($request, PHP_URL_PATH);
-$pathFragments = explode('/', $path);
-$id = end($pathFragments);
 
+$id = $_GET['id'] ?? $_POST['id'];
 // Fetech user data based on id
 $result = mysqli_query($mysqli, "SELECT * FROM post WHERE id=$id");
  
@@ -59,11 +52,17 @@ while($dt = mysqli_fetch_array($result))
     <div class="container">
         <div class="card">
             <div class="m-2">
+                <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="admin.php">Admin</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Edit Produk</li>
+                </ol>
+                </nav>
                 <?php if(isset($success)){ echo $success ;} ?>
                 <div class="text-right">
-                    <a class="btn btn-success" href="/admin"><i class="fas fa-x"></i></a>
+                    <a class="btn btn-success" href="admin.php"><i class="fas fa-x"></i></a>
                 </div>
-                <form class="form" action="/edit-product/<?php  echo $id ?>" method="post" name="form1">
+                <form class="form"  method="post" action="edit.php" >
                     <div class="form-group">
                         <label for="exampleInputEmail1">Nama Produk</label>
                         <input type="text" name="nama" class="form-control" value="<?php echo $nama ?>">
@@ -88,6 +87,7 @@ while($dt = mysqli_fetch_array($result))
                         <input type="checkbox" class="custom-control-input" id="customSwitch1" value="<?php echo $tampil ?>">
                         <label class="custom-control-label" for="customSwitch1">Tampilkan Product</label>
                     </div>
+                    <input type="hidden" name="id" value=<?php echo $_GET['id'] ?? $_POST['id'];?>>
                     <input type="submit" class="btn btn-primary mt-2" name="update" value="Simpan Produk">
                     <!-- <button type="submit" class="btn btn-primary">Posting Produk</button> -->
                 </form>

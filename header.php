@@ -44,6 +44,6 @@
     <nav class="navbar navbar-light bg-light shadow mb-2">
       <a class="navbar-brand" href="#">
           <!-- <img src="/docs/4.6/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> -->
-          Admin Dashboard
+          Fahry Fara - Dashboard
       </a>
     </nav>

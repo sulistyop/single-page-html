@@ -3,12 +3,19 @@
     require 'header.php';
 ?>
     <div class="container">
+
         <div class="card">
             <div class="m-2">
+                <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="admin.php">Admin</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Tambah Produk</li>
+                </ol>
+                </nav>
                 <div class="text-right">
-                    <a class="btn btn-success" href="/admin"><i class="fas fa-x"></i></a>
+                    <a class="btn btn-success" href="admin.php"><i class="fas fa-x"></i></a>
                 </div>
-                <form class="form" action="/tambah-product" method="post" name="form1">
+                <form class="form" action="add.php" method="post" name="form1">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Nama Produk</label>
                         <input type="text" name="nama" class="form-control" placeholder="Nama Produk">
