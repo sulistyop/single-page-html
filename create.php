@@ -36,7 +36,6 @@
 
         if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
             if($ukuran < 1044070){		
-                var_dump('hahaha');	
                 move_uploaded_file($file_tmp, 'foto/'.$namaFoto);
                 // $query = mysql_query("INSERT INTO upload VALUES(NULL, '$namaFoto')");
             }else{
