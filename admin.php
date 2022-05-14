@@ -5,7 +5,8 @@
 
     $data = mysqli_query($mysqli, "SELECT * FROM post ORDER BY id DESC");
 ?>
-    <div class="m-2 shadow">
+<?php session_start(); ?>
+    <div class="m-1 shadow">
         <div class="card">
             <div class="m-2">
             <a class="btn btn-primary" href="add.php">Tambah Product</a>
@@ -15,7 +16,7 @@
                             <tr>
                                 <th scope="col">No</th>
                                 <th scope="col">Produck</th>
-                                <th scope="col">Aksi</th>
+                                <th colspan="2" scope="col" class="text-center">Aksi</th>
                             
                             </tr>
                         </thead>
@@ -28,6 +29,8 @@
                                     <a class="btn btn-success" href="edit.php?id=<?php echo $value['id'] ?>">
                                         <i class="fas fa-pen-to-square"></i>
                                     </a>
+                                </td>
+                                <td>
                                     <a class="btn btn-danger" href='delete.php?id=<?php echo $value['id'] ?>'>
                                         <i class="fas fa-trash"></i>
                                     </a>
@@ -40,3 +43,12 @@
             </div>
         </div>
     </div>
+
+   
+  
+    <?php if(@$_SESSION['sukses']){ ?>
+        <script>
+            swal("Good job!", "<?php echo $_SESSION['sukses']; ?>", "success");
+        </script>
+    <!-- jangan lupa untuk menambahkan unset agar sweet alert tidak muncul lagi saat di refresh -->
+    <?php unset($_SESSION['sukses']); } ?>

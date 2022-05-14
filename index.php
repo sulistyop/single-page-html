@@ -77,7 +77,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM post WHERE tampilkan != 0 ORDER B
     <div class="container">
       <div class="count-box " data-aos="fade-up">
         <div style="z-index: 1000;background-color: black;color: white;border-radius: 25px;">
-          <h1>Fahry Fara Alumunium</h1>
+          <h1>Toko Alumunium & Kaca Fahry Fara</h1>
           <p>Kami Mengutamakan Kualitas ! </p>
         </div>
       </div>

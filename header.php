@@ -6,6 +6,8 @@
 
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css" rel="stylesheet">
 
   <!-- Favicons -->
   <link href="" rel="icon">
@@ -42,8 +44,18 @@
 <body>
     <!-- Image and text -->
     <nav class="navbar navbar-light bg-light shadow mb-2">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/">
           <!-- <img src="/docs/4.6/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> -->
           Fahry Fara - Dashboard
       </a>
     </nav>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
+    <?php if(@$_SESSION['sukses']){ ?>
+        <script>
+            swal("Good job!", "<?php echo $_SESSION['sukses']; ?>", "success");
+        </script>
+    <!-- jangan lupa untuk menambahkan unset agar sweet alert tidak muncul lagi saat di refresh -->
+    <?php unset($_SESSION['sukses']); } ?>
+
+

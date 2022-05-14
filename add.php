@@ -1,6 +1,7 @@
 <title>Fahry Fara Alumunium - Tambah Produk</title>
 <?php
     require 'header.php';
+  
 ?>
     <div class="container">
 
@@ -15,14 +16,28 @@
                 <div class="text-right">
                     <a class="btn btn-success" href="admin.php"><i class="fas fa-x"></i></a>
                 </div>
-                <form class="form" action="add.php" method="post" name="form1">
+                <form class="form" action="create.php" method="post" name="form1" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Nama Produk</label>
                         <input type="text" name="nama" class="form-control" placeholder="Nama Produk">
+                        <?php
+                            if(isset($_GET['nama'])){
+                                if($_GET['nama'] == "kosong"){
+                                    echo "<p style='color:red;font-size:11px;'>Nama Produk Wajib Diisi !</p>";
+                                }
+                            }
+                        ?>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Harga Asli</label>
-                        <input type="text" name="harga" class="form-control" placeholder="Rp.">
+                        <input type="text" name="harga" class="form-control" placeholder="Rp." >
+                        <?php
+                            if(isset($_GET['harga'])){
+                                if($_GET['harga'] == "kosong"){
+                                    echo "<p style='color:red;font-size:11px;'>Harga Produk Wajib Diisi !</p>";
+                                }
+                            }
+                        ?>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Harga Sebelum Diskon</label>
@@ -32,14 +47,38 @@
                         <label for="exampleInputPassword1">Deskripsi Produk</label>
                         <textarea type="text" name="deskripsi" class="form-control texteditor"></textarea>
                     </div>
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="validatedCustomFile">
-                        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                    </div>
-                    <div class="custom-control custom-switch mt-2">
-                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                    <div class="custom-control custom-switch mt-2 text-center">
+                        <input type="checkbox" class="custom-control-input" name="tampilkan" value="1" id="customSwitch1" checked>
                         <label class="custom-control-label" for="customSwitch1">Tampilkan Product</label>
                     </div>
+                    <label for="image_broadcast">Gambar</label>
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <div class="col-md-8 ">
+                                <div class="d-flex justify-content-center">
+                                    <img src="https://placehold.it/80x80" id="preview" class="img-thumbnail">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div id="msg"></div>
+                                <input type="file" name="file" class="file" accept="image/*" hidden >
+                                <div class="input-group my-3">
+                                    <input type="text" class="form-control" disabled placeholder="Upload File" id="file">
+                                    <div class="input-group-append">
+                                    <button type="button" class="browse btn btn-primary">Browse...</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                            if(isset($_GET['file'])){
+                                if($_GET['file'] == "kosong"){
+                                    echo "<p style='color:red;font-size:11px;'>Foto Produk Wajib Diisi !</p>";
+                                }
+                                }
+                            ?>
+                        </div>
+                    </div>
+                   
                     <input type="submit" class="btn btn-primary mt-2" name="Submit" value="Simpan Produk">
                     <!-- <button type="submit" class="btn btn-primary">Posting Produk</button> -->
                 </form>
@@ -47,36 +86,25 @@
         </div>
     </div>
  
-	<?php
- 
-	// Check If form submitted, insert form data into users table.
-	if(isset($_POST['Submit'])) {
-		$nama = $_POST['nama'];
-		$harga = $_POST['harga'];
-		$harga_palsu = $_POST['harga_palsu'];
-		$deskripsi = $_POST['deskripsi'];
-		$foto = $_POST['foto'] ?? '';
-        $tampilkan = 1;
 	
-		
-		// include database connection file
-		include_once("config.php");
-				
-		// Insert user data into table
-		$result = mysqli_query(
-            $mysqli, 
-            "INSERT INTO post(nama,harga,harga_palsu,deskripsi,foto,tampilkan)
-             VALUES(
-                 '$nama',
-                 '$harga',
-                 '$harga_palsu',
-                 '$foto',
-                 '$deskripsi',
-                 '$tampilkan'
-                 )");
-		
-		// Show message when user added
-		echo "User added successfully. <a href='index.php'>View Users</a>";
-	}
-	?>
+
+    
+<script>
+    $(document).on("click", ".browse", function() {
+    var file = $(this).parents().find(".file");
+    file.trigger("click");
+    });
+    $('input[type="file"]').change(function(e) {
+    var fileName = e.target.files[0].name;
+    $("#file").val(fileName);
+
+    var reader = new FileReader();
+    reader.onload = function(e) {
+        // get loaded data and render thumbnail.
+        document.getElementById("preview").src = e.target.result;
+    };
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+    });
+</script>
 
