@@ -14,7 +14,8 @@
        $harga_palsu = $_POST['harga_palsu'];
        $deskripsi = $_POST['deskripsi'];
        $foto = $_POST['foto'] ?? '';
-       $tampilkan = $_POST['tampilkan'];
+       $tampilkan = $_POST['tampilkan'] ?? 0;
+       
 
        $ekstensi_diperbolehkan	= array('png','jpg');
        $namaFoto = $_FILES['file']['name'];
@@ -23,12 +24,14 @@
        $ukuran	= $_FILES['file']['size'];
        $file_tmp = $_FILES['file']['tmp_name'];	
    
+       $fileName = "";
         if(!empty($namaFoto))
         {
             if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
                 if($ukuran < 1044070){		
                     unlink('foto/'.$fotoLama);
-                    move_uploaded_file($file_tmp, 'foto/'.$namaFoto);
+                    $fileName = $id.time().".".$ekstensi;
+                    move_uploaded_file($file_tmp, 'foto/'.  $fileName);
                     // $query = mysql_query("INSERT INTO upload VALUES(NULL, '$namaFoto')");
                 }else{
                     echo 'UKURAN FILE TERLALU BESAR';
@@ -37,7 +40,7 @@
                 echo 'EKSTENSI FILE YANG DI UPLOAD TIDAK DI PERBOLEHKAN';
             }
         }else{
-            $namaFoto = $fotoLama;
+            $fileName = $fotoLama;
         }
 
        $result = mysqli_query(
@@ -47,7 +50,7 @@
             harga='$harga',
             harga_palsu='$harga_palsu',
             deskripsi='$deskripsi',
-            foto='$namaFoto',
+            foto='$fileName',
             tampilkan='$tampilkan'
             WHERE id=$id"
        );

@@ -38,7 +38,7 @@ while($dt = mysqli_fetch_array($result))
                 <div class="text-right">
                     <a class="btn btn-success" href="admin.php"><i class="fas fa-x"></i></a>
                 </div>
-                <form class="form"  method="post" action="update.php"enctype="multipart/form-data">
+                <form class="form"  method="post" action="update.php" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Nama Produk</label>
                         <input type="text" name="nama" class="form-control" value="<?php echo $nama ?>">
@@ -56,7 +56,7 @@ while($dt = mysqli_fetch_array($result))
                         <textarea type="text" name="deskripsi" class="form-control texteditor"><?php echo $deskripsi ?></textarea>
                     </div>
                     <div class="custom-control custom-switch mb-2 text-center">
-                        <input name="tampilkan" type="checkbox" class="custom-control-input"  id="customSwitch1" value="0" <?php echo $tampil =='1' ? 'checked': '' ?>>
+                        <input name="tampilkan" type="checkbox" class="custom-control-input"  id="customSwitch1" value="1" <?php echo $tampil =='1' ? 'checked': '' ?>>
                         <label class="custom-control-label" for="customSwitch1">Tampilkan Product</label>
                     </div>
                     <label for="image_broadcast">Gambar</label>
@@ -85,14 +85,16 @@ while($dt = mysqli_fetch_array($result))
             </div>
         </div>
     </div>
-
-
     <?php if(@$_SESSION['sukses']){ ?>
         <script>
             swal("Good job!", "<?php echo $_SESSION['sukses']; ?>", "success");
         </script>
     <!-- jangan lupa untuk menambahkan unset agar sweet alert tidak muncul lagi saat di refresh -->
     <?php unset($_SESSION['sukses']); } ?>
+
+
+
+
     <script>
     $(document).on("click", ".browse", function() {
     var file = $(this).parents().find(".file");

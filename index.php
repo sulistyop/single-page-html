@@ -100,14 +100,22 @@ $result = mysqli_query($mysqli, "SELECT * FROM post WHERE tampilkan != 0 ORDER B
             </div>
             <div class="row">
             <?php  foreach($result as $data){ ?>
+             <style>
+                .section-products <?php echo "#product-".$data['id'] ?> .part-1::before  {
+                    background: url("<?php echo 'foto/'.$data['foto'] ?>") no-repeat center;
+                    background-size: cover;
+                    transition: all 0.3s;
+                }
+
+               </style>
               <div class="col-md-6 col-lg-4 col-xl-3">
-                <div id="product-1" class="single-product">
+                <div id="product-<?php echo $data['id'];?>" class="single-product">
                   <div class="part-1">
                     <ul>
-                      <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                      <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                      <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                      <li><a href="#"><i class="fas fa-expand"></i></a></li>
+                      <li ><a href="https://api.whatsapp.com/send?phone=6285282330303&text=Assalamu%27alaikum.%20%0D%0AHalo%20kak.%0D%0ASaya%20ingin%20membeli%20Produk%20%3A%0D%0A%0D%0A%2ANama%2A%20%2AProduk%2A%20%3A<?php echo $data['nama']?>%20%0D%0A%2AHarga%2A%20%3A<?php echo $data['harga']?>"><i class="fa-brands fa-whatsapp"> </i></a></li>
+                      <li><a href=""><i class="fas fa-heart"></i></a></li>
+                      <li><a href=""><i class="fas fa-plus"></i></a></li>
+                      <li><a href="detail.php?id=<?php echo $data['id']?>"><i class="fas fa-expand"></i></a></li>
                     </ul>
                   </div>
                   <div class="part-2">
