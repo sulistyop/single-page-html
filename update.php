@@ -28,14 +28,9 @@
         if(!empty($namaFoto))
         {
             if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
-                if($ukuran < 1044070){		
-                    unlink('foto/'.$fotoLama);
-                    $fileName = $id.time().".".$ekstensi;
-                    move_uploaded_file($file_tmp, 'foto/'.  $fileName);
-                    // $query = mysql_query("INSERT INTO upload VALUES(NULL, '$namaFoto')");
-                }else{
-                    echo 'UKURAN FILE TERLALU BESAR';
-                }
+                unlink('foto/'.$fotoLama);
+                $fileName = $id.time().".".$ekstensi;
+                move_uploaded_file($file_tmp, 'foto/'.  $fileName);
             }else{
                 echo 'EKSTENSI FILE YANG DI UPLOAD TIDAK DI PERBOLEHKAN';
             }

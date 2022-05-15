@@ -52,34 +52,32 @@
                         <label class="custom-control-label" for="customSwitch1">Tampilkan Product</label>
                     </div>
                     <label for="image_broadcast">Gambar</label>
-                    <div class="col-md-9">
                         <div class="form-group">
-                            <div class="col-md-8 ">
-                                <div class="d-flex justify-content-center">
-                                    <img src="https://placehold.it/80x80" id="preview" class="img-thumbnail">
+                            <div class="d-flex justify-content-center">
+                                <img src="https://placehold.it/80x80" id="preview" class="img-thumbnail">
+                            </div>
+                    
+                        
+                            <div id="msg"></div>
+                            <input type="file" name="file" class="file" accept="image/*" hidden >
+                            <div class="input-group my-3">
+                                <input type="text" class="form-control" disabled placeholder="Upload File" id="file">
+                                <div class="input-group-append">
+                                <button type="button" class="browse btn btn-primary">Browse...</button>
                                 </div>
                             </div>
-                            <div class="col-md-8">
-                                <div id="msg"></div>
-                                <input type="file" name="file" class="file" accept="image/*" hidden >
-                                <div class="input-group my-3">
-                                    <input type="text" class="form-control" disabled placeholder="Upload File" id="file">
-                                    <div class="input-group-append">
-                                    <button type="button" class="browse btn btn-primary">Browse...</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php
-                            if(isset($_GET['file'])){
-                                if($_GET['file'] == "kosong"){
-                                    echo "<p style='color:red;font-size:11px;'>Foto Produk Wajib Diisi !</p>";
-                                }
-                                }
-                            ?>
-                        </div>
+                        
+                        <?php
+                        if(isset($_GET['file'])){
+                            if($_GET['file'] == "kosong"){
+                                echo "<p style='color:red;font-size:11px;'>Foto Produk Wajib Diisi !</p>";
+                            }
+                            }
+                        ?>
                     </div>
-                   
-                    <input type="submit" class="btn btn-primary mt-2" name="Submit" value="Simpan Produk">
+                    <div class="text-center">
+                        <input type="submit" class="btn btn-primary mt-2" name="Submit" value="Simpan Produk">
+                    </div>
                     <!-- <button type="submit" class="btn btn-primary">Posting Produk</button> -->
                 </form>
             </div>

@@ -5,7 +5,6 @@
 
     $data = mysqli_query($mysqli, "SELECT * FROM post ORDER BY id DESC");
 ?>
-<?php session_start(); ?>
     <div class="container ">
         <div class="card shadow">
             <div class="m-2">
@@ -91,3 +90,9 @@
         </script>
     <!-- jangan lupa untuk menambahkan unset agar sweet alert tidak muncul lagi saat di refresh -->
     <?php unset($_SESSION['sukses']); } ?>
+    <?php if(@$_SESSION['login-sukses']){ ?>
+        <script>
+            swal("Good job!", "<?php echo $_SESSION['login-sukses']; ?>", "success");
+        </script>
+    <!-- jangan lupa untuk menambahkan unset agar sweet alert tidak muncul lagi saat di refresh -->
+    <?php unset($_SESSION['login-sukses']); } ?>

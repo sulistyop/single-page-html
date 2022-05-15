@@ -3,7 +3,7 @@
 <?php
     require 'header.php';
     include_once("config.php");
-    session_start();
+   
 ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 <?php
@@ -26,7 +26,7 @@ while($dt = mysqli_fetch_array($result))
 ?>
 
     <div class="container">
-        <div class="card">
+        <div class="card mb-2">
             <div class="m-2">
                 <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -60,14 +60,11 @@ while($dt = mysqli_fetch_array($result))
                         <label class="custom-control-label" for="customSwitch1">Tampilkan Product</label>
                     </div>
                     <label for="image_broadcast">Gambar</label>
-                    <div class="col-md-9">
+                    <div class="col-md-12">
                         <div class="form-group">
-                            <div class="col-md-8 ">
                                 <div class="d-flex justify-content-center">
                                     <img src="<?php echo "foto/".$foto; ?>" id="preview" class="img-thumbnail">
                                 </div>
-                            </div>
-                            <div class="col-md-8">
                                 <div id="msg"></div>
                                 <input type="file" name="file" class="file" accept="image/*" hidden>
                                 <div class="input-group my-3">
@@ -76,11 +73,12 @@ while($dt = mysqli_fetch_array($result))
                                     <button type="button" class="browse btn btn-primary">Browse...</button>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
                     <input type="hidden" name="id" value=<?php echo $_GET['id'] ?? $_POST['id'];?>>
-                    <input type="submit" class="btn btn-primary mt-2" name="update" value="Simpan Produk">
+                    <div class="text-center">
+                        <input type="submit" class="btn btn-primary mt-2" name="update" value="Simpan Produk">
+                    </div>
                 </form>
             </div>
         </div>

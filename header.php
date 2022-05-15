@@ -1,3 +1,10 @@
+<?php
+  session_start();
+    
+  if (!isset($_SESSION['username'])) {
+      header("Location: login.php");
+  }
+?>
 <html>
 <head>
   <meta charset="utf-8">
@@ -7,7 +14,7 @@
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
   <!-- Favicons -->
   <link href="" rel="icon">
@@ -44,11 +51,30 @@
 <body>
     <!-- Image and text -->
     <nav class="navbar navbar-light bg-light shadow mb-2">
-      <a class="navbar-brand" href="/">
-          <!-- <img src="/docs/4.6/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> -->
-          Fahry Fara - Dashboard
-      </a>
+        <div class="container">
+          <a class="navbar-brand" href="/">
+              <!-- <img src="/docs/4.6/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> -->
+              Fahry Fara - Dashboard
+          </a>
+          <div class="float-right">
+            <div class="btn-group">
+              <a type="button" class="dropdown-toggle " data-toggle="dropdown" data-display="static" aria-expanded="false">
+                <?php echo  $_SESSION['username']; ?>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <button class="dropdown-item" type="button">Action</button>
+                <button class="dropdown-item" type="button">Another action</button>
+                <button class="dropdown-item" type="button">Something else here</button>
+                <form action="" method="POST">
+                <a href="logout.php" class="dropdown-item">Logout</a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
     </nav>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <?php if(@$_SESSION['sukses']){ ?>

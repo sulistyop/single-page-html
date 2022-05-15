@@ -6,6 +6,16 @@ $id = $_GET['id'];
 
 // Fetch all users data from database
 $result = mysqli_query($mysqli, "SELECT * FROM post WHERE id != $id  ");
+while($data = mysqli_fetch_array($result))
+{
+	$nama = $data['nama'];
+	$harga = $data['harga'];
+	$harga_palsu = $data['harga_palsu'];
+	$foto = $data['foto'];
+	$deskripsi = $data['deskripsi'];
+	$tampil = $data['tampilkan'];
+  $id = $data['id'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,12 +59,6 @@ $result = mysqli_query($mysqli, "SELECT * FROM post WHERE id != $id  ");
 </head>
 
 <body>
-
-  <video autoplay muted loop id="myVideo">
-    <source height="auto" width="100%" id="videoBG" src="clip/Aluminium-gedung.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
-  </video>
-
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center header-transparent">
     <div class="container d-flex align-items-center">
@@ -64,21 +68,27 @@ $result = mysqli_query($mysqli, "SELECT * FROM post WHERE id != $id  ");
         </span>
         <ul>
           <li class="active"><a href="/">Home</a></li>
-          <li><a href="#product">Product</a></li>
-          <li><a href="#lokasi">Lokasi</a></li>
-          <li><a href="#doa">Review</a></li>
-          <li><a href="#kontak">Kontak</a></li>
         </ul>
       </nav><!-- .nav-menu -->
     </div>
   </header><!-- End Header -->
 
-
-  
   <!-- =======  Section Pengumuman ======= -->
-  <section id="product" class="ann">
+  <section id="product" class="ann" style="margin-top:50px">
     <div class="container">
-      
+      <div class="card">
+          <div class="row m-1">
+              <div class="col-md-6">
+               <img src="<?php echo 'foto/'.$foto ?>" class="card-img-top" alt="...">
+
+              </div>
+              <div class="col-md-6">
+                <div class="m-2">
+                  <h3><?php echo $nama ?></h3>
+                </div>
+              </div>
+          </div>
+      </div>
     </div>
   </section>
 
@@ -108,9 +118,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM post WHERE id != $id  ");
   <!-- End Section -->
   <!-- ======= Footer ======= -->
   <footer id="footer">
-    <video width="100%" height="auto" autoplay muted loop>
-      <source src="clip/file2.mp4" type="video/mp4">
-    </video>
+  
 
     <div class="container">
       <div class="copyright">
